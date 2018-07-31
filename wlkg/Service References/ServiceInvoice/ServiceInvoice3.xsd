@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://vmr7104-2-31.lygport.com.cn/IPortService/WLKGBSTransactor/ServiceInvoice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" />
+  <xs:element name="GetDelegation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFirm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFirmQuasi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTaxis" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDelegationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="GetDelegationResult" nillable="true" type="q1:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDelegationAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFirm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFirmQuasi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTaxis" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDelegationAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="GetDelegationAllResult" nillable="true" type="q2:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Query">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFirm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="QueryResult" nillable="true" type="q3:PackageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Query1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFirm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Query1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="Query1Result" nillable="true" type="q4:PackageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCompany" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDepartment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="QueryBillResult" nillable="true" type="q5:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Querybaogan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCompany" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDepartment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuerybaoganResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="QuerybaoganResult" nillable="true" type="q6:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Queryglht">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sQL" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryglhtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="QueryglhtResult" nillable="true" type="q7:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Querydaishou">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCompany" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDepartment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuerydaishouResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="QuerydaishouResult" nillable="true" type="q8:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryMoney">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCompany" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDepartment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryMoneyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="QueryMoneyResult" nillable="true" type="q9:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryReBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sQLString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryReBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="QueryReBillResult" nillable="true" type="q10:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RelationContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flag" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="delegationno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RelationContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="RelationContractResult" nillable="true" type="q11:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunProcedure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunProcedureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="RunProcedureResult" nillable="true" type="q12:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunProcedure1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunProcedure1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="RunProcedure1Result" nillable="true" type="q13:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunProcedure2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="delegation_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunProcedure2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="RunProcedure2Result" nillable="true" type="q14:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdataData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdataDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="UpdataDataResult" nillable="true" type="q15:Package" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="UpdataContractResult" nillable="true" type="q16:Package" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppendAccBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="bill" nillable="true" type="q17:ACCBILLE" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppendAccBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="AppendAccBillResult" nillable="true" type="q18:PackageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppendAccMoney">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="money" nillable="true" type="q19:ACCPAYMENTE" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppendAccMoneyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="AppendAccMoneyResult" nillable="true" type="q20:PackageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAccBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAccBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="DeleteAccBillResult" nillable="true" type="q21:Package" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAccMoney">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAccMoneyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="DeleteAccMoneyResult" nillable="true" type="q22:Package" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="DeleteBillResult" nillable="true" type="q23:Package" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sQL1" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="DeleteEntityResult" nillable="true" type="q24:PackageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sQL2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="InsertEntityResult" nillable="true" type="q25:PackageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEntiey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sQL3" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEntieyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="UpdateEntieyResult" nillable="true" type="q26:PackageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBaseData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cryptogram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iport_dept" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBaseDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" minOccurs="0" name="GetBaseDataResult" nillable="true" type="q27:PackageOfDataSetymujubN2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PackageOfDataSetymujubN2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PackageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:appinfo>
+              <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element ref="xs:schema" />
+            <xs:any />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackageOfDataSetymujubN2" nillable="true" type="tns:PackageOfDataSetymujubN2" />
+  <xs:complexType name="PackageOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PackageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackageOfstring" nillable="true" type="tns:PackageOfstring" />
+  <xs:complexType name="Package">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Package" nillable="true" type="tns:Package" />
+  <xs:complexType name="ACCBILLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Billdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Billid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Billno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Billtotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Delegationid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inputdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inputman" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Iportcomp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Iportdept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Payer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACCBILLE" nillable="true" type="tns:ACCBILLE" />
+  <xs:complexType name="ACCPAYMENTE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Delegationid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Flag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inputdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inputman" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Iportcomp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Iportdept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paydate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Payid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paytotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACCPAYMENTE" nillable="true" type="tns:ACCPAYMENTE" />
+  <xs:complexType name="PackageOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PackageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PackageOfboolean" nillable="true" type="tns:PackageOfboolean" />
+</xs:schema>

@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceInvoice" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IInvoice_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IInvoice_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://vmr7104-2-31.lygport.com.cn/IPortService/WLKGBSTransactor/ServiceInvoice.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://vmr7104-2-31.lygport.com.cn/IPortService/WLKGBSTransactor/ServiceInvoice.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://vmr7104-2-31.lygport.com.cn/IPortService/WLKGBSTransactor/ServiceInvoice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/YGSoft.IPort.wlkgbs.Contract" />
+      <xsd:import schemaLocation="http://vmr7104-2-31.lygport.com.cn/IPortService/WLKGBSTransactor/ServiceInvoice.svc?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInvoice_GetDelegation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelegation" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_GetDelegation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelegationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_GetDelegationAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelegationAll" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_GetDelegationAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelegationAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Query_InputMessage">
+    <wsdl:part name="parameters" element="tns:Query" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Query_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Query1_InputMessage">
+    <wsdl:part name="parameters" element="tns:Query1" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Query1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Query1Response" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_QueryBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryBill" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_QueryBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Querybaogan_InputMessage">
+    <wsdl:part name="parameters" element="tns:Querybaogan" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Querybaogan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuerybaoganResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Queryglht_InputMessage">
+    <wsdl:part name="parameters" element="tns:Queryglht" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Queryglht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryglhtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Querydaishou_InputMessage">
+    <wsdl:part name="parameters" element="tns:Querydaishou" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_Querydaishou_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuerydaishouResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_QueryMoney_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryMoney" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_QueryMoney_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryMoneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_QueryReBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryReBill" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_QueryReBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryReBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_RelationContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:RelationContract" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_RelationContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RelationContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_RunProcedure_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunProcedure" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_RunProcedure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunProcedureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_RunProcedure1_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunProcedure1" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_RunProcedure1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunProcedure1Response" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_RunProcedure2_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunProcedure2" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_RunProcedure2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunProcedure2Response" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_UpdataData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdataData" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_UpdataData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdataDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_UpdataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdataContract" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_UpdataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_AppendAccBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppendAccBill" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_AppendAccBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppendAccBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_AppendAccMoney_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppendAccMoney" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_AppendAccMoney_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppendAccMoneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteAccBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccBill" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteAccBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteAccMoney_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccMoney" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteAccMoney_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccMoneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBill" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntity" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_DeleteEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_InsertEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEntity" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_InsertEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_UpdateEntiey_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEntiey" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_UpdateEntiey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEntieyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_GetBaseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseData" />
+  </wsdl:message>
+  <wsdl:message name="IInvoice_GetBaseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaseDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInvoice">
+    <wsdl:operation name="GetDelegation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/GetDelegation" message="tns:IInvoice_GetDelegation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/GetDelegationResponse" message="tns:IInvoice_GetDelegation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDelegationAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/GetDelegationAll" message="tns:IInvoice_GetDelegationAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/GetDelegationAllResponse" message="tns:IInvoice_GetDelegationAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Query" message="tns:IInvoice_Query_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/QueryResponse" message="tns:IInvoice_Query_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Query1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Query1" message="tns:IInvoice_Query1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/Query1Response" message="tns:IInvoice_Query1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/QueryBill" message="tns:IInvoice_QueryBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/QueryBillResponse" message="tns:IInvoice_QueryBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Querybaogan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Querybaogan" message="tns:IInvoice_Querybaogan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/QuerybaoganResponse" message="tns:IInvoice_Querybaogan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Queryglht">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Queryglht" message="tns:IInvoice_Queryglht_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/QueryglhtResponse" message="tns:IInvoice_Queryglht_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Querydaishou">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/Querydaishou" message="tns:IInvoice_Querydaishou_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/QuerydaishouResponse" message="tns:IInvoice_Querydaishou_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMoney">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/QueryMoney" message="tns:IInvoice_QueryMoney_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/QueryMoneyResponse" message="tns:IInvoice_QueryMoney_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryReBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/QueryReBill" message="tns:IInvoice_QueryReBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/QueryReBillResponse" message="tns:IInvoice_QueryReBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelationContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/RelationContract" message="tns:IInvoice_RelationContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/RelationContractResponse" message="tns:IInvoice_RelationContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/RunProcedure" message="tns:IInvoice_RunProcedure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/RunProcedureResponse" message="tns:IInvoice_RunProcedure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/RunProcedure1" message="tns:IInvoice_RunProcedure1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/RunProcedure1Response" message="tns:IInvoice_RunProcedure1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/RunProcedure2" message="tns:IInvoice_RunProcedure2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/RunProcedure2Response" message="tns:IInvoice_RunProcedure2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdataData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/UpdataData" message="tns:IInvoice_UpdataData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/UpdataDataResponse" message="tns:IInvoice_UpdataData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/UpdataContract" message="tns:IInvoice_UpdataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/UpdataContractResponse" message="tns:IInvoice_UpdataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppendAccBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/AppendAccBill" message="tns:IInvoice_AppendAccBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/AppendAccBillResponse" message="tns:IInvoice_AppendAccBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppendAccMoney">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/AppendAccMoney" message="tns:IInvoice_AppendAccMoney_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/AppendAccMoneyResponse" message="tns:IInvoice_AppendAccMoney_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/DeleteAccBill" message="tns:IInvoice_DeleteAccBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/DeleteAccBillResponse" message="tns:IInvoice_DeleteAccBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccMoney">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/DeleteAccMoney" message="tns:IInvoice_DeleteAccMoney_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/DeleteAccMoneyResponse" message="tns:IInvoice_DeleteAccMoney_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/DeleteBill" message="tns:IInvoice_DeleteBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/DeleteBillResponse" message="tns:IInvoice_DeleteBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/DeleteEntity" message="tns:IInvoice_DeleteEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/DeleteEntityResponse" message="tns:IInvoice_DeleteEntity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/InsertEntity" message="tns:IInvoice_InsertEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/InsertEntityResponse" message="tns:IInvoice_InsertEntity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntiey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/UpdateEntiey" message="tns:IInvoice_UpdateEntiey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/UpdateEntieyResponse" message="tns:IInvoice_UpdateEntiey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInvoice/GetBaseData" message="tns:IInvoice_GetBaseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInvoice/GetBaseDataResponse" message="tns:IInvoice_GetBaseData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IInvoice" type="tns:IInvoice">
+    <wsp:PolicyReference URI="#WSHttpBinding_IInvoice_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDelegation">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/GetDelegation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDelegationAll">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/GetDelegationAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Query" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query1">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Query1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/QueryBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Querybaogan">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Querybaogan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Queryglht">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Queryglht" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Querydaishou">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Querydaishou" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMoney">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/QueryMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryReBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/QueryReBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RelationContract">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/RelationContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/RunProcedure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure1">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/RunProcedure1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure2">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/RunProcedure2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdataData">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/UpdataData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdataContract">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/UpdataContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppendAccBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/AppendAccBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppendAccMoney">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/AppendAccMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/DeleteAccBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccMoney">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/DeleteAccMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/DeleteBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/DeleteEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntity">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/InsertEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntiey">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/UpdateEntiey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseData">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/GetBaseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IInvoice" type="tns:IInvoice">
+    <wsp:PolicyReference URI="#NetTcpBinding_IInvoice_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetDelegation">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/GetDelegation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDelegationAll">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/GetDelegationAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Query" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query1">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Query1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/QueryBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Querybaogan">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Querybaogan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Queryglht">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Queryglht" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Querydaishou">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/Querydaishou" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMoney">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/QueryMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryReBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/QueryReBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RelationContract">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/RelationContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/RunProcedure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure1">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/RunProcedure1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure2">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/RunProcedure2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdataData">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/UpdataData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdataContract">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/UpdataContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppendAccBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/AppendAccBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppendAccMoney">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/AppendAccMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/DeleteAccBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccMoney">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/DeleteAccMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBill">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/DeleteBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/DeleteEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntity">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/InsertEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntiey">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/UpdateEntiey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseData">
+      <soap12:operation soapAction="http://tempuri.org/IInvoice/GetBaseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceInvoice">
+    <wsdl:port name="WSHttpBinding_IInvoice" binding="tns:WSHttpBinding_IInvoice">
+      <soap12:address location="http://168.100.2.31/IPortService/wlkgbsTransactor/ServiceInvoice.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://168.100.2.31/IPortService/wlkgbsTransactor/ServiceInvoice.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IInvoice" binding="tns:NetTcpBinding_IInvoice">
+      <soap12:address location="net.tcp://168.100.2.31/IPortService/wlkgbsTransactor/ServiceInvoice.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://168.100.2.31/IPortService/wlkgbsTransactor/ServiceInvoice.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>详细资讯</title>
+    <link href="../../Css/css.css" rel="stylesheet" />
+    <script src="../../Jquery/jquery-2.1.0.min.js"></script>
+
+    <script>
+
+        var str = document.location.search;
+        var str1 = str.split("?", 2);
+        var message = str1[1];
+        //message = "info=03.01+15221";
+
+        $(document).ready(function () {
+
+            $.getJSON("NewsDetail.aspx?message=" + message, null, function (ret) {
+                //标题
+                $('#headnews').text(ret[0][0]);
+                //来源
+                $('#source').text("时间：" + ret[0][1]);
+                //内容
+                var decode = decodeURIComponent(ret[0][2]);
+                decode = decode.replace(/\+/g, " ");
+                if (decode != "")
+                {
+                    //第二个参数中的 g 表示全部匹配,i表示忽略大小写
+                    var NewsScrImg = new RegExp("/admin/upload_images/upimage/", "gi");
+                    var NewsTarImg = "http://218.92.115.100:81/admin/upload_images/upimage/";    
+                    decode = decode.replace(NewsScrImg, NewsTarImg);//全部替换
+                    decode = decode.replace(/14pt/g, "26pt");
+                    decode = decode.replace(/16pt/g, "26pt");
+                    decode = decode.replace(/18pt/g, "26pt");
+                    decode = decode.replace(/20pt/g, "26pt");
+                    decode = decode.replace(/22pt/g, "26pt");
+                    decode = decode.replace(/24pt/g, "26pt");
+                }
+             
+                $('#content').html(decode);
+                //完
+                $('#end').text("(完)");
+            })
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <!--<div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title">详细信息</div>
+        </div>-->
+
+        <div id="detailnews" >
+            <h3 id="headnews" style="color: #00579e; background-color:#dce7f0; padding-left:15px; padding-right:15px; font-size:2.4em; line-height:2.2em;text-align:left; "></h3>
+            <p id="source" style="margin: 0px 16px 10px 16px; font-size:1.4em; color:#787878; line-height:1.8em; text-align:left"></p>
+            <p id="content" style="text-align: justify; margin: 0px 16px 10px 16px; font-size:2.0em;color: #000000; line-height:2.0em "></p>
+            <p id="end" style="margin-left:16px; font-size:2.0em;"></p>
+        </div>
+
+        <!--页尾-->
+        <!--<div class="bk20"></div>-->
+        <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+
+</body>
+</html>

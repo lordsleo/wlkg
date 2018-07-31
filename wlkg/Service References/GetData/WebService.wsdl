@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx">
+      <s:element name="GetClientData">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetClientDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassWord" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetContractInfo_HYGS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetContractInfo_HYGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContractInfo_HYGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContractInfoByTime_HYGS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContractInfoByTime_HYGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContractInfoByTime_HYGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContractInfo_CWGS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetContractInfo_CWGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContractInfo_CWGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContractInfoByTime_CWGS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContractInfoByTime_CWGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContractInfoByTime_CWGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayReceiveBill_HYGS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPayReceiveBill_HYGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPayReceiveBill_HYGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayReceiveBillByTime_HYGS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayReceiveBillByTime_HYGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPayReceiveBillByTime_HYGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayReceiveBill_CWGS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPayReceiveBill_CWGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPayReceiveBill_CWGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayReceiveBillByTime_CWGS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayReceiveBillByTime_CWGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPayReceiveBillByTime_CWGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYW_HYGS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetYW_HYGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYW_HYGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYWByTime_HYGS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYWByTime_HYGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYWByTime_HYGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYW_CWGS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetYW_CWGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYW_CWGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYWByTime_CWGS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYWByTime_CWGSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYWByTime_CWGSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYW_CWGS_CDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetYW_CWGS_CDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYW_CWGS_CDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetClientDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientData" />
+  </wsdl:message>
+  <wsdl:message name="GetClientDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientDataAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfo_HYGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContractInfo_HYGS" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfo_HYGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContractInfo_HYGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfo_HYGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfoByTime_HYGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContractInfoByTime_HYGS" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfoByTime_HYGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContractInfoByTime_HYGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfoByTime_HYGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfo_CWGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContractInfo_CWGS" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfo_CWGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContractInfo_CWGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfo_CWGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfoByTime_CWGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContractInfoByTime_CWGS" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfoByTime_CWGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContractInfoByTime_CWGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContractInfoByTime_CWGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBill_HYGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPayReceiveBill_HYGS" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBill_HYGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPayReceiveBill_HYGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBill_HYGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBillByTime_HYGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPayReceiveBillByTime_HYGS" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBillByTime_HYGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPayReceiveBillByTime_HYGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBillByTime_HYGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBill_CWGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPayReceiveBill_CWGS" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBill_CWGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPayReceiveBill_CWGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBill_CWGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBillByTime_CWGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPayReceiveBillByTime_CWGS" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBillByTime_CWGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPayReceiveBillByTime_CWGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPayReceiveBillByTime_CWGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_HYGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYW_HYGS" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_HYGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYW_HYGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_HYGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetYWByTime_HYGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYWByTime_HYGS" />
+  </wsdl:message>
+  <wsdl:message name="GetYWByTime_HYGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYWByTime_HYGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYWByTime_HYGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_CWGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYW_CWGS" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_CWGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYW_CWGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_CWGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetYWByTime_CWGSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYWByTime_CWGS" />
+  </wsdl:message>
+  <wsdl:message name="GetYWByTime_CWGSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYWByTime_CWGSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYWByTime_CWGSAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_CWGS_CDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYW_CWGS_CDB" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_CWGS_CDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYW_CWGS_CDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYW_CWGS_CDBAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="GetClientData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取客户信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetClientDataSoapIn" />
+      <wsdl:output message="tns:GetClientDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfo_HYGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取货运公司合同信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetContractInfo_HYGSSoapIn" />
+      <wsdl:output message="tns:GetContractInfo_HYGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfoByTime_HYGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过时间段获取货运公司合同信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetContractInfoByTime_HYGSSoapIn" />
+      <wsdl:output message="tns:GetContractInfoByTime_HYGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfo_CWGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取船务公司合同信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetContractInfo_CWGSSoapIn" />
+      <wsdl:output message="tns:GetContractInfo_CWGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfoByTime_CWGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过时间段获取船务公司合同信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetContractInfoByTime_CWGSSoapIn" />
+      <wsdl:output message="tns:GetContractInfoByTime_CWGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBill_HYGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取货运公司商务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetPayReceiveBill_HYGSSoapIn" />
+      <wsdl:output message="tns:GetPayReceiveBill_HYGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBillByTime_HYGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过时间段获取货运公司商务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetPayReceiveBillByTime_HYGSSoapIn" />
+      <wsdl:output message="tns:GetPayReceiveBillByTime_HYGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBill_CWGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取船务公司商务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetPayReceiveBill_CWGSSoapIn" />
+      <wsdl:output message="tns:GetPayReceiveBill_CWGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBillByTime_CWGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过时间段获取船务公司商务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetPayReceiveBillByTime_CWGSSoapIn" />
+      <wsdl:output message="tns:GetPayReceiveBillByTime_CWGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_HYGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取货运公司业务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetYW_HYGSSoapIn" />
+      <wsdl:output message="tns:GetYW_HYGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYWByTime_HYGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过时间段获取货运公司业务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetYWByTime_HYGSSoapIn" />
+      <wsdl:output message="tns:GetYWByTime_HYGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_CWGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取船务公司业务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetYW_CWGSSoapIn" />
+      <wsdl:output message="tns:GetYW_CWGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYWByTime_CWGS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过时间段获取船务公司业务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetYWByTime_CWGSSoapIn" />
+      <wsdl:output message="tns:GetYWByTime_CWGSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_CWGS_CDB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取船务公司船代部业务信息数据</wsdl:documentation>
+      <wsdl:input message="tns:GetYW_CWGS_CDBSoapIn" />
+      <wsdl:output message="tns:GetYW_CWGS_CDBSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientData">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetClientData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetClientDataAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfo_HYGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetContractInfo_HYGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetContractInfo_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfoByTime_HYGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetContractInfoByTime_HYGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetContractInfoByTime_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfo_CWGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetContractInfo_CWGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetContractInfo_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfoByTime_CWGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetContractInfoByTime_CWGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetContractInfoByTime_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBill_HYGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetPayReceiveBill_HYGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPayReceiveBill_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBillByTime_HYGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetPayReceiveBillByTime_HYGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPayReceiveBillByTime_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBill_CWGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetPayReceiveBill_CWGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPayReceiveBill_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBillByTime_CWGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetPayReceiveBillByTime_CWGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPayReceiveBillByTime_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_HYGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYW_HYGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetYW_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYWByTime_HYGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYWByTime_HYGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetYWByTime_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_CWGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYW_CWGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetYW_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYWByTime_CWGS">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYWByTime_CWGS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetYWByTime_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_CWGS_CDB">
+      <soap:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYW_CWGS_CDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetYW_CWGS_CDBAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientData">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetClientData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetClientDataAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfo_HYGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetContractInfo_HYGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetContractInfo_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfoByTime_HYGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetContractInfoByTime_HYGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetContractInfoByTime_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfo_CWGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetContractInfo_CWGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetContractInfo_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractInfoByTime_CWGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetContractInfoByTime_CWGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetContractInfoByTime_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBill_HYGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetPayReceiveBill_HYGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPayReceiveBill_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBillByTime_HYGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetPayReceiveBillByTime_HYGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPayReceiveBillByTime_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBill_CWGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetPayReceiveBill_CWGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPayReceiveBill_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayReceiveBillByTime_CWGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetPayReceiveBillByTime_CWGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPayReceiveBillByTime_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_HYGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYW_HYGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetYW_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYWByTime_HYGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYWByTime_HYGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetYWByTime_HYGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_CWGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYW_CWGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetYW_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYWByTime_CWGS">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYWByTime_CWGS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetYWByTime_CWGSAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYW_CWGS_CDB">
+      <soap12:operation soapAction="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx/GetYW_CWGS_CDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetYW_CWGS_CDBAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://ws-lh.lygeport.gov.cn:8080/GetDataService/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

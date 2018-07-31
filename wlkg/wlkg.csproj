@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31978C71-ADD3-44C7-81B8-FE8D0DF48918}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wlkg</RootNamespace>
+    <AssemblyName>wlkg</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words, Version=10.5.0.0, Culture=neutral, PublicKeyToken=fa9a48344f15a022, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="IPortData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d68b0a7daaf47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IPortData.dll</HintPath>
+    </Reference>
+    <Reference Include="leo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\leo.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\css.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.android-2.5.1.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.android-ics-2.5.2.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.animation-2.5.2.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.core-2.5.2.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.ios-2.5.1.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.jqm-2.5.1.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.sense-ui-2.5.1.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.wp-2.5.2.css" />
+    <Content Include="Jquery\dev\css\wp_icons.png" />
+    <Content Include="Jquery\dev\css\wp_icons_light.png" />
+    <Content Include="Jquery\dev\jquery-1.9.1.js" />
+    <Content Include="Jquery\dev\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Jquery\dev\js\mobiscroll.android-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.android-ics-2.5.2.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.core-2.5.2-zh.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.core-2.5.2.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.datetime-2.5.1-zh.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.datetime-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.ios-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.jqm-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.list-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.select-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.wp-2.5.2.js" />
+    <Content Include="Jquery\jquery.min.js" />
+    <Content Include="Jquery\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Jquery\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Page\DeclareReported.html" />
+    <Content Include="Page\DeclareReported1.aspx" />
+    <Content Include="Page\DeclareReported2.aspx" />
+    <Content Include="Page\InspectReported.html" />
+    <Content Include="Page\InspectReported1.aspx" />
+    <Content Include="Page\InspectReported2.aspx" />
+    <Content Include="Page\TodayReport.html" />
+    <Content Include="Jquery\jquery-2.1.0.min.js" />
+    <Content Include="Page\TodayReport.aspx" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\GetData\WebService.disco" />
+    <None Include="Service References\GetData\configuration91.svcinfo" />
+    <None Include="Service References\GetData\configuration.svcinfo" />
+    <None Include="Service References\GetData\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceInvoice\ServiceInvoice.disco" />
+    <None Include="Service References\ServiceInvoice\configuration91.svcinfo" />
+    <None Include="Service References\ServiceInvoice\configuration.svcinfo" />
+    <None Include="Service References\ServiceInvoice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service\Approval\BillingApproval\BillingApproval.aspx" />
+    <Content Include="Service\Approval\BillingApproval\BillingApprovalReturn.aspx" />
+    <Content Include="Service\Approval\BillingApproval\DelegationApproval.aspx" />
+    <Content Include="Service\Approval\BillingApproval\DelegationApprovalReturn.aspx" />
+    <Content Include="Service\Approval\BillingApproval\GetBillingList.aspx" />
+    <Content Include="Service\Approval\BillingApproval\GetDelegationList.aspx" />
+    <Content Include="Service\Declare.aspx" />
+    <Content Include="Service\Equipment\GetEquipmentRecord.aspx" />
+    <Content Include="Service\Equipment\GetEquipmentRecordDetail.aspx" />
+    <Content Include="Service\Equipment\GetEquipmentRunning.aspx" />
+    <Content Include="Service\Equipment\GetEquipmentRunningDetail.aspx" />
+    <Content Include="Service\Inspect.aspx" />
+    <Content Include="Service\News\BasicLevel\GetBasicLevelNewsDetail.aspx" />
+    <Content Include="Service\News\BasicLevel\GetBasicLevelNewsList.aspx" />
+    <Content Include="Service\News\CompanyIssuing\GetCompanyIssuingNewsDetail.aspx" />
+    <Content Include="Service\News\CompanyIssuing\GetCompanyIssuingNewsList.aspx" />
+    <Content Include="Service\News\CompanyNews\GetCompanyNewsDetail.aspx" />
+    <Content Include="Service\News\CompanyNews\GetCompanyNewsList.aspx" />
+    <Content Include="Service\News\LeaderSpeech\GetLeaserSpeechNewsDetail.aspx" />
+    <Content Include="Service\News\LeaderSpeech\GetLeaserSpeechNewsList.aspx" />
+    <Content Include="Service\News\NewsDetail.html" />
+    <Content Include="Service\News\NewsDetail.aspx" />
+    <Content Include="Service\News\PartyBuilding\GetPartyBuildingNewsDetail.aspx" />
+    <Content Include="Service\News\PartyBuilding\GetPartyBuildingNewsList.aspx" />
+    <Content Include="Service\ReportFile\GetBS_BusinessCondictionReport.aspx" />
+    <Content Include="Service\ReportFile\GetBS_CustomerOperationReport.aspx" />
+    <Content Include="Service\ReportFile\GetBusinessConditionReportList.aspx" />
+    <Content Include="Service\ServiceWLKG.aspx" />
+    <Content Include="Service\Supervise\Business\GetBS_BusinessManagementCenter.aspx" />
+    <Content Include="Service\Supervise\Business\GetBS_BusinessManagementCenterDetail.aspx" />
+    <Content Include="Service\Supervise\Business\GetCC_BusinessManagementCenter.aspx" />
+    <Content Include="Service\Supervise\Business\GetCC_BusinessManagementCenterDetail.aspx" />
+    <Content Include="Service\Supervise\Business\GetDistributionBuiness.aspx" />
+    <Content Include="Service\Supervise\Business\GetFreightBuiness.aspx" />
+    <Content Include="Service\Supervise\Business\GetFreightBuinessDetail.aspx" />
+    <Content Include="Service\Supervise\Business\GetShippingBuiness.aspx" />
+    <Content Include="Service\Supervise\Business\GetShippingBuinessDeatil.aspx" />
+    <Content Include="Service\Supervise\Finance\GetBS_FinanceManagementCenter.aspx" />
+    <Content Include="Service\Supervise\Finance\GetBS_FinanceManagementCenterDetail.aspx" />
+    <Content Include="Service\Supervise\Finance\GetCC_FinanceManagementCenter.aspx" />
+    <Content Include="Service\Supervise\Finance\GetDistributionFinance.aspx" />
+    <Content Include="Service\Supervise\Finance\GetFeightFinance.aspx" />
+    <Content Include="Service\Supervise\Finance\GetFeightFinanceDetail.aspx" />
+    <Content Include="Service\Supervise\Finance\GetShippingFinance.aspx" />
+    <Content Include="Service\Supervise\Finance\GetShippingFinanceDetail.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ExcelIO.cs" />
+    <Compile Include="Common\FileTool.cs" />
+    <Compile Include="Common\LogTool.cs" />
+    <Compile Include="Common\DicPackage.cs" />
+    <Compile Include="Common\ReportExportToExcel.cs" />
+    <Compile Include="Common\Operation.cs" />
+    <Compile Include="Common\TokenTool.cs" />
+    <Compile Include="Common\XLCommon.cs" />
+    <Compile Include="Page\DeclareReported1.aspx.cs">
+      <DependentUpon>DeclareReported1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\DeclareReported1.aspx.designer.cs">
+      <DependentUpon>DeclareReported1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\DeclareReported2.aspx.cs">
+      <DependentUpon>DeclareReported2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\DeclareReported2.aspx.designer.cs">
+      <DependentUpon>DeclareReported2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\InspectReported1.aspx.cs">
+      <DependentUpon>InspectReported1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\InspectReported1.aspx.designer.cs">
+      <DependentUpon>InspectReported1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\InspectReported2.aspx.cs">
+      <DependentUpon>InspectReported2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\InspectReported2.aspx.designer.cs">
+      <DependentUpon>InspectReported2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\TodayReport.aspx.cs">
+      <DependentUpon>TodayReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\TodayReport.aspx.designer.cs">
+      <DependentUpon>TodayReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\GetData\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceInvoice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\BillingApproval.aspx.cs">
+      <DependentUpon>BillingApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\BillingApproval.aspx.designer.cs">
+      <DependentUpon>BillingApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\BillingApprovalReturn.aspx.cs">
+      <DependentUpon>BillingApprovalReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\BillingApprovalReturn.aspx.designer.cs">
+      <DependentUpon>BillingApprovalReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\DelegationApproval.aspx.cs">
+      <DependentUpon>DelegationApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\DelegationApproval.aspx.designer.cs">
+      <DependentUpon>DelegationApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\DelegationApprovalReturn.aspx.cs">
+      <DependentUpon>DelegationApprovalReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\DelegationApprovalReturn.aspx.designer.cs">
+      <DependentUpon>DelegationApprovalReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\GetBillingList.aspx.cs">
+      <DependentUpon>GetBillingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\GetBillingList.aspx.designer.cs">
+      <DependentUpon>GetBillingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\GetDelegationList.aspx.cs">
+      <DependentUpon>GetDelegationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Approval\BillingApproval\GetDelegationList.aspx.designer.cs">
+      <DependentUpon>GetDelegationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Declare.aspx.cs">
+      <DependentUpon>Declare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Declare.aspx.designer.cs">
+      <DependentUpon>Declare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Equipment\GetEquipmentRecord.aspx.cs">
+      <DependentUpon>GetEquipmentRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Equipment\GetEquipmentRecord.aspx.designer.cs">
+      <DependentUpon>GetEquipmentRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Equipment\GetEquipmentRecordDetail.aspx.cs">
+      <DependentUpon>GetEquipmentRecordDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Equipment\GetEquipmentRecordDetail.aspx.designer.cs">
+      <DependentUpon>GetEquipmentRecordDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Equipment\GetEquipmentRunning.aspx.cs">
+      <DependentUpon>GetEquipmentRunning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Equipment\GetEquipmentRunning.aspx.designer.cs">
+      <DependentUpon>GetEquipmentRunning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Equipment\GetEquipmentRunningDetail.aspx.cs">
+      <DependentUpon>GetEquipmentRunningDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Equipment\GetEquipmentRunningDetail.aspx.designer.cs">
+      <DependentUpon>GetEquipmentRunningDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Inspect.aspx.cs">
+      <DependentUpon>Inspect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Inspect.aspx.designer.cs">
+      <DependentUpon>Inspect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\BasicLevel\GetBasicLevelNewsDetail.aspx.cs">
+      <DependentUpon>GetBasicLevelNewsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\BasicLevel\GetBasicLevelNewsDetail.aspx.designer.cs">
+      <DependentUpon>GetBasicLevelNewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\BasicLevel\GetBasicLevelNewsList.aspx.cs">
+      <DependentUpon>GetBasicLevelNewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\BasicLevel\GetBasicLevelNewsList.aspx.designer.cs">
+      <DependentUpon>GetBasicLevelNewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\CompanyIssuing\GetCompanyIssuingNewsDetail.aspx.cs">
+      <DependentUpon>GetCompanyIssuingNewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\CompanyIssuing\GetCompanyIssuingNewsDetail.aspx.designer.cs">
+      <DependentUpon>GetCompanyIssuingNewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\CompanyIssuing\GetCompanyIssuingNewsList.aspx.cs">
+      <DependentUpon>GetCompanyIssuingNewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\CompanyIssuing\GetCompanyIssuingNewsList.aspx.designer.cs">
+      <DependentUpon>GetCompanyIssuingNewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\CompanyNews\GetCompanyNewsDetail.aspx.cs">
+      <DependentUpon>GetCompanyNewsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\CompanyNews\GetCompanyNewsDetail.aspx.designer.cs">
+      <DependentUpon>GetCompanyNewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\CompanyNews\GetCompanyNewsList.aspx.cs">
+      <DependentUpon>GetCompanyNewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\CompanyNews\GetCompanyNewsList.aspx.designer.cs">
+      <DependentUpon>GetCompanyNewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\LeaderSpeech\GetLeaserSpeechNewsDetail.aspx.cs">
+      <DependentUpon>GetLeaserSpeechNewsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\LeaderSpeech\GetLeaserSpeechNewsDetail.aspx.designer.cs">
+      <DependentUpon>GetLeaserSpeechNewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\LeaderSpeech\GetLeaserSpeechNewsList.aspx.cs">
+      <DependentUpon>GetLeaserSpeechNewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\LeaderSpeech\GetLeaserSpeechNewsList.aspx.designer.cs">
+      <DependentUpon>GetLeaserSpeechNewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\NewsDetail.aspx.cs">
+      <DependentUpon>NewsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\NewsDetail.aspx.designer.cs">
+      <DependentUpon>NewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\PartyBuilding\GetPartyBuildingNewsDetail.aspx.cs">
+      <DependentUpon>GetPartyBuildingNewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\PartyBuilding\GetPartyBuildingNewsDetail.aspx.designer.cs">
+      <DependentUpon>GetPartyBuildingNewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\News\PartyBuilding\GetPartyBuildingNewsList.aspx.cs">
+      <DependentUpon>GetPartyBuildingNewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\News\PartyBuilding\GetPartyBuildingNewsList.aspx.designer.cs">
+      <DependentUpon>GetPartyBuildingNewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ReportFile\GetBS_BusinessCondictionReport.aspx.cs">
+      <DependentUpon>GetBS_BusinessCondictionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ReportFile\GetBS_BusinessCondictionReport.aspx.designer.cs">
+      <DependentUpon>GetBS_BusinessCondictionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ReportFile\GetBS_CustomerOperationReport.aspx.cs">
+      <DependentUpon>GetBS_CustomerOperationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ReportFile\GetBS_CustomerOperationReport.aspx.designer.cs">
+      <DependentUpon>GetBS_CustomerOperationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ReportFile\GetBusinessConditionReportList.aspx.cs">
+      <DependentUpon>GetBusinessConditionReportList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ReportFile\GetBusinessConditionReportList.aspx.designer.cs">
+      <DependentUpon>GetBusinessConditionReportList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ServiceMethod.cs" />
+    <Compile Include="Service\ServiceTool.cs" />
+    <Compile Include="Service\ServiceWLKG.aspx.cs">
+      <DependentUpon>ServiceWLKG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ServiceWLKG.aspx.designer.cs">
+      <DependentUpon>ServiceWLKG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetBS_BusinessManagementCenter.aspx.cs">
+      <DependentUpon>GetBS_BusinessManagementCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetBS_BusinessManagementCenter.aspx.designer.cs">
+      <DependentUpon>GetBS_BusinessManagementCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetBS_BusinessManagementCenterDetail.aspx.cs">
+      <DependentUpon>GetBS_BusinessManagementCenterDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetBS_BusinessManagementCenterDetail.aspx.designer.cs">
+      <DependentUpon>GetBS_BusinessManagementCenterDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetCC_BusinessManagementCenter.aspx.cs">
+      <DependentUpon>GetCC_BusinessManagementCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetCC_BusinessManagementCenter.aspx.designer.cs">
+      <DependentUpon>GetCC_BusinessManagementCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetCC_BusinessManagementCenterDetail.aspx.cs">
+      <DependentUpon>GetCC_BusinessManagementCenterDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetCC_BusinessManagementCenterDetail.aspx.designer.cs">
+      <DependentUpon>GetCC_BusinessManagementCenterDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetDistributionBuiness.aspx.cs">
+      <DependentUpon>GetDistributionBuiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetDistributionBuiness.aspx.designer.cs">
+      <DependentUpon>GetDistributionBuiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetFreightBuiness.aspx.cs">
+      <DependentUpon>GetFreightBuiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetFreightBuiness.aspx.designer.cs">
+      <DependentUpon>GetFreightBuiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetFreightBuinessDetail.aspx.cs">
+      <DependentUpon>GetFreightBuinessDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetFreightBuinessDetail.aspx.designer.cs">
+      <DependentUpon>GetFreightBuinessDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetShippingBuiness.aspx.cs">
+      <DependentUpon>GetShippingBuiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetShippingBuiness.aspx.designer.cs">
+      <DependentUpon>GetShippingBuiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetShippingBuinessDeatil.aspx.cs">
+      <DependentUpon>GetShippingBuinessDeatil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Business\GetShippingBuinessDeatil.aspx.designer.cs">
+      <DependentUpon>GetShippingBuinessDeatil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetBS_FinanceManagementCenter.aspx.cs">
+      <DependentUpon>GetBS_FinanceManagementCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetBS_FinanceManagementCenter.aspx.designer.cs">
+      <DependentUpon>GetBS_FinanceManagementCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetBS_FinanceManagementCenterDetail.aspx.cs">
+      <DependentUpon>GetBS_FinanceManagementCenterDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetBS_FinanceManagementCenterDetail.aspx.designer.cs">
+      <DependentUpon>GetBS_FinanceManagementCenterDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetCC_FinanceManagementCenter.aspx.cs">
+      <DependentUpon>GetCC_FinanceManagementCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetCC_FinanceManagementCenter.aspx.designer.cs">
+      <DependentUpon>GetCC_FinanceManagementCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetDistributionFinance.aspx.cs">
+      <DependentUpon>GetDistributionFinance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetDistributionFinance.aspx.designer.cs">
+      <DependentUpon>GetDistributionFinance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetFeightFinance.aspx.cs">
+      <DependentUpon>GetFeightFinance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetFeightFinance.aspx.designer.cs">
+      <DependentUpon>GetFeightFinance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetFeightFinanceDetail.aspx.cs">
+      <DependentUpon>GetFeightFinanceDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetFeightFinanceDetail.aspx.designer.cs">
+      <DependentUpon>GetFeightFinanceDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetShippingFinance.aspx.cs">
+      <DependentUpon>GetShippingFinance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetShippingFinance.aspx.designer.cs">
+      <DependentUpon>GetShippingFinance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetShippingFinanceDetail.aspx.cs">
+      <DependentUpon>GetShippingFinanceDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\Supervise\Finance\GetShippingFinanceDetail.aspx.designer.cs">
+      <DependentUpon>GetShippingFinanceDetail.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\fabu.pubxml" />
+    <None Include="Service References\GetData\WebService.wsdl" />
+    <Content Include="Service References\GetData\wlkg.GetData.GetClientDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetContractInfoByTime_CWGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetContractInfoByTime_HYGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetContractInfo_CWGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetContractInfo_HYGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetPayReceiveBillByTime_CWGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetPayReceiveBillByTime_HYGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetPayReceiveBill_CWGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetPayReceiveBill_HYGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetYWByTime_CWGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetYWByTime_HYGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetYW_CWGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetYW_CWGS_CDBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GetData\wlkg.GetData.GetYW_HYGSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceInvoice\ServiceInvoice.wsdl" />
+    <None Include="Service References\ServiceInvoice\ServiceInvoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceInvoice\ServiceInvoice1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceInvoice\ServiceInvoice2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceInvoice\ServiceInvoice3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\ServiceInvoice\wlkg.ServiceInvoice.Package.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceInvoice\wlkg.ServiceInvoice.PackageOfboolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceInvoice\wlkg.ServiceInvoice.PackageOfDataSetymujubN2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceInvoice\wlkg.ServiceInvoice.PackageOfstring.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GetData\" />
+    <WCFMetadataStorage Include="Service References\ServiceInvoice\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>35720</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:35720/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

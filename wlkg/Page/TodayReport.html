@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>今日快报</title>
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <style>
+        #ticker {
+            width: 280px;
+            height: 500px;
+            text-align: center;
+        }
+        #ticker dt {
+            height: 40px;
+            margin-left: 0;
+            font-size:18px;
+            position: relative;
+        }
+
+        #ticker dd.last {
+            border-bottom: 1px solid #ffffff;
+        }
+        #ticker div {
+            margin-top: 0;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+            var ticker = $("#ticker");
+            ticker.children().filter("dt").each(function () {
+                var dt = $(this),
+                  container = $("<div>");
+                dt.next().appendTo(container);
+                dt.prependTo(container);
+                container.appendTo(ticker);
+            });
+            ticker.css("overflow", "hidden");
+            function animator(currentItem) {
+                var distance = currentItem.height();
+                duration = (distance + parseInt(currentItem.css("marginTop"))) / 0.025;
+                currentItem.animate({ marginTop: -distance }, duration, "linear", function () {
+                    currentItem.appendTo(currentItem.parent()).css("marginTop", 0);
+                    animator(currentItem.parent().children(":first"));
+                });
+            };
+            animator(ticker.children(":first"));
+            ticker.mouseenter(function () {
+                ticker.children().stop();
+            });
+            ticker.mouseleave(function () {
+                animator(ticker.children(":first"));
+            });
+
+            $.getJSON("TodayReport.aspx", null, function (ret) {
+                for (var i = 0; i < ret.length; ++i) {
+                    $('#ticker').append("<dt>" + ret[i] + "</dt>")
+                }
+                animator(ticker.children(":first"));
+            })        
+        });
+    </script>
+</head>
+<body style="background-color:#cfceef">
+    <div id="tickerContainer">
+        <dl id="ticker" style="margin:0 auto;">
+        </dl>
+    </div>
+</body>
+</html>

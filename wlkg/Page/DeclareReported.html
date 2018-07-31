@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>保税公司报关详细</title>
+    <style type="text/css">
+        ul, h2 {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .page_content {
+            margin-top: -19px;
+            position: relative;
+        }
+
+        .page_content .declareTime, .releaseTime {
+            padding-top: 4px;
+        }
+
+        .page_content .declareButton, .releaseButton {
+            text-align: center;
+        }
+    </style>
+
+    <link href="../Jquery/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <script src="../Jquery/jquery.min.js"></script>
+    <script src="../Jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../Jquery/dev/js/mobiscroll.core-2.5.2.js"></script>
+    <script src="../Jquery/dev/js/mobiscroll.core-2.5.2-zh.js"></script>
+    <link href="../Jquery/dev/css/mobiscroll.core-2.5.2.css" rel="stylesheet" />
+    <link href="../Jquery/dev/css/mobiscroll.animation-2.5.2.css" rel="stylesheet" />
+    <script src="../Jquery/dev/js/mobiscroll.datetime-2.5.1.js"></script>
+    <script src="../Jquery/dev/js/mobiscroll.datetime-2.5.1-zh.js"></script>
+    <script src="../Jquery/dev/js/mobiscroll.android-ics-2.5.2.js"></script>
+    <link href="../Jquery/dev/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" />
+
+
+    <script type="text/javascript">
+
+        var strUrl = document.location.search;
+        //var strUrl = "info=111+000+%E8%BF%9C%E5%A4%A7+HR1255032";
+        //var strUrl = "info=111+1542+HR1255032";
+        //var str1 = str.split("=", 2);
+        //var str2 = str1[1].split("+", 3);
+        //var userId = str2[0];
+        //var declareId = str2[1];
+        //var blno = str2[1];
+
+        $(function () {
+            var currYear = (new Date()).getFullYear();
+            var opt = {};
+            opt.date = { preset: 'date' };
+            //opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+            opt.datetime = { preset: 'datetime' };
+            opt.time = { preset: 'time' };
+            opt.default = {
+                theme: 'android-ics light', //皮肤样式
+                display: 'modal', //显示方式
+                mode: 'scroller', //日期选择模式
+                lang: 'zh',
+                startYear: currYear - 10, //开始年份
+                endYear: currYear + 10 //结束年份
+            };
+
+            var optDateTime = $.extend(opt['datetime'], opt['default']);
+            var optTime = $.extend(opt['time'], opt['default']);
+            $("#text1").mobiscroll(optDateTime).datetime(optTime);
+            $("#text2").mobiscroll(optDateTime).datetime(optTime);
+
+            var str = decodeURIComponent(strUrl);
+            var str1 = str.split("=", 2);
+            var str2 = str1[1].split("+", 3);
+            var userId = str2[0];
+            var declareId = str2[1];//报关ID
+            var blno = str2[2];//提单号
+
+            function draw1(declareTime) {
+                var confirmMess = "提单号: " + blno + " 确认报关？";
+                var truthBeTold = window.confirm(confirmMess);
+                if (truthBeTold) {
+                    if (declareTime == '') {
+                        window.alert("请输入报关时间！");
+                        return;
+                    }
+
+                    $.getJSON("DeclareReported1.aspx?message=" + userId + "+" + declareId + "+" + declareTime, null, function (ret) {
+                        var alertMess;
+                        if (ret[0][0] == "ture") {
+                            alertMess = "提单号: " + blno + " 报关成功！";
+                        }
+                        else {
+                            alertMess = "提单号: " + blno + " 报关失败！";
+                        }
+                        window.alert(alertMess);
+                    })
+                }
+            }
+
+            function draw2(releaseTime, remark, declareNum) {
+                var confirmMess = "提单号: " + blno + " 确认放行？";
+                var truthBeTold = window.confirm(confirmMess);
+                if (truthBeTold) {
+                    if (releaseTime == '') {
+                        window.alert("请输入放行时间！");
+                        return;
+                    }
+                    if (declareNum == '') {
+                        window.alert("请输入放行单号！");
+                        return;
+                    }
+
+                    var remarkUtf8 = encodeURIComponent(remark);
+                    var declareNumUtf8 = encodeURIComponent(declareNum);
+
+                    $.getJSON("DeclareReported2.aspx?message=" + userId + "+" + declareId + "+" + releaseTime + "+" + remarkUtf8 + "+" + declareNumUtf8, null, function (ret) {
+                        var alertMess;
+                        if (ret[0][0] == "default") {
+                            alertMess = "提单号: " + blno + " 不能再次放行！";
+                        }
+                        else if (ret[0][0] == "ture") {
+                            alertMess = "提单号: " + blno + " 放行成功！";
+                        }
+                        else {
+                            alertMess = "提单号: " + blno + " 放行失败！";
+                        }
+                        window.alert(alertMess);
+                    })
+                }
+            }
+
+
+            $("#sure1").click(function () {
+                var declareTime = $("#text1").val();
+                draw1(declareTime);
+            });
+            $("#sure2").click(function () {
+                var declareTime = $("#text2").val();
+                var remark = $("#textare-1").val();
+                var declareNum = $("#text-1").val();
+                draw2(declareTime, remark, declareNum);
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <div class="page_content">
+
+        <div data-role="tabs">
+            <div role="main" class="ui-content">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#fragment-1" class="ui-btn-active">报关</a></li>
+                        <li><a href="#fragment-2">放行</a></li>
+                    </ul>
+                </div>
+
+                <div id="fragment-1">
+                    <div class="declareTime">
+                        <span>报关时间：</span>
+                    </div>
+                    <div class="declareText">
+                        <input type="text" id="text1">
+                    </div>
+                    <div class="declareButton">
+                        <button id="sure1" data-inline="true">确定</button>
+                    </div>
+                </div>
+                <div id="fragment-2">
+                    <div class="releaseTime">
+                        <span>放行时间：</span>
+                    </div>
+                    <div class="releaseText">
+                        <input type="text" id="text2">
+                    </div>
+                    <div>
+                        <form>
+                            <label for=" text-1">报关单号：</label>
+                            <input type="text" name="text-1" id="text-1" value="">
+                        </form>
+                    </div>
+                    <div>
+                        <form>
+                            <label for=" textare-1">备注：</label>
+                            <textarea name="textare-1" id="textare-1" rows="10" cols="30"></textarea>
+                        </form>
+                    </div>
+                    <div class="releaseButton">
+                        <button id="sure2" data-inline="true">确定</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
